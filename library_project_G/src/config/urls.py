@@ -19,9 +19,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('library.urls')),  # 🔗 Include our app URLs
+    path('events/', include('events.urls', namespace='events')),
     
 ]
 

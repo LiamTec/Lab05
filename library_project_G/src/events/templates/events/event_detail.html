@@ -1,0 +1,21 @@
+<!-- event_detail.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>{{ event.title }}</h1>
+    <p>{{ event.description }}</p>
+    <p>Ubicación: {{ event.location }}</p>
+    <p>Fecha y hora: {{ event.start_time }} - {{ event.end_time }}</p>
+
+    <!-- Mostrar el botón de registro si el evento no está lleno -->
+    {% if not event.is_full %}
+        <form method="POST" action="{% url 'events:event_register' slug=event.slug %}">
+            {% csrf_token %}
+            <label for="phone">Teléfono:</label>
+            <input type="text" id="phone" name="phone" required>
+            <button type="submit">Registrarme</button>
+        </form>
+    {% else %}
+        <p>Este evento ya está lleno.</p>
+    {% endif %}
+{% endblock %}
