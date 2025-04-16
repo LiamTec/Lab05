@@ -24,8 +24,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('library.urls')),  # 🔗 Include our app URLs
+<<<<<<< HEAD
     path('events/', include('events.urls', namespace='events')),
     
+=======
+    path('inventory',include('inventory.urls'))
+>>>>>>> 90ef0db4f5abf46890cf7d41942783dd5d47bcdd
 ]
 
 if settings.DEBUG:

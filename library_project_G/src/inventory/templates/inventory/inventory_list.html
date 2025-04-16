@@ -1,0 +1,21 @@
+<h1>Inventory List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Condition</th>
+            <th>Shelf</th>
+            <th>Acquisition Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in inventory %}
+        <tr>
+            <td>{{ item.book.title }}</td>
+            <td>{{ item.condition }}</td>
+            <td>{{ item.shelf.name }}</td>
+            <td>{{ item.acquisition_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
