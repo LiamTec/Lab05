@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'library',
     'users',
+<<<<<<< HEAD
     'events',
+=======
+    'inventory',
+>>>>>>> 20092d93b606ecece62927adb42edff8e01614a8
 ]
 
 MIDDLEWARE = [
