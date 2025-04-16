@@ -39,11 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'library',
     'users',
-<<<<<<< HEAD
     'events',
-=======
     'inventory',
->>>>>>> 20092d93b606ecece62927adb42edff8e01614a8
 ]
 
 MIDDLEWARE = [
@@ -61,7 +58,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [],  # Agrega tus carpetas de plantillas si es necesario
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,18 +118,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Asegúrate de que esta carpeta exista
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+# Configuración para un modelo de usuario personalizado
+# Si estás utilizando un modelo de usuario personalizado, agrega esta línea
+AUTH_USER_MODEL = 'users.LibraryUser'  # Cambia esto si el modelo personalizado es otro
 
-
-AUTH_USER_MODEL = 'users.LibraryUser'
