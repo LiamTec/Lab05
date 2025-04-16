@@ -1,4 +1,9 @@
-"# Lab05" 
+"Lab05"
+
+-Gonzales Rojas, Liam
+-Santana Luna, Gean
+-Davila Perez, Alessandro
+
 pip install django 
 
 pip install django pillow
